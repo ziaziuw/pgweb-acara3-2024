@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="alert alert-primary text-center">PIPALANDA</h1>
+        <div class="card">
+            <div class="card-body">
+                <!-- Ini adalah row input angka -->
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="angkapertama" class="form-label">Angka Pertama</label>
+                            <input type="number" class="form-control" id="angkapertama" value="0">
+                        </div>
+                    </div>
+                    <div class=" col">
+                        <div class="mb-3">
+                            <label for="angkakedua" class="form-label">Angka Kedua</label>
+                            <input type="number" class="form-control" id="angkakedua" value="0">
+                        </div>
+                    </div>
+                </div>
+                <!-- Ini adalah akhir row input angka -->
+
+                <!-- Mulai tombol hitung -->
+                <div class="row">
+                    <div class="col">
+                        <button type="button" class="btn btn-primary" onclick="tambah()">+</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-warning" onclick="kurang()">-</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-success" onclick="kali()">x</button>
+                    </div>
+                    <div class="col"><button type="button" class="btn btn-danger" onclick="bagi()">/</button>
+                    </div>
+                </div>
+                <!-- Akhir row tombol hitung -->
+
+                <!-- Mulai menampilkan hasil -->
+                <div class="row">
+                    <div class="col text-center">
+                        <h1 id="hasil"></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script>
+        // memanggil value dari input angka pertama
+        var angka1 = document.getElementById('angkapertama');
+
+        // memanggil value dari input angka kedua
+        var angka2 = document.getElementById('angkakedua');
+
+        // function tambah
+        function tambah() {
+            // penjumlahan
+            var hitung = parseFloat(angka1.value) + parseInt(angka2.value);
+
+            // menampilkan hasil penjumlahan
+            document.getElementById('hasil').innerHTML = hitung;
+        }
+
+        // function kurang
+        function kurang() {
+            // pengurangan
+            var hitung = parseFloat(angka1.value) - parseInt(angka2.value);
+
+            // menampilkan hasil pengurangan
+            document.getElementById('hasil').innerHTML = hitung;
+        }
+
+        // function kali
+        function kali() {
+            // perkalian
+            var hitung = parseFloat(angka1.value) * parseInt(angka2.value);
+
+            // menampilkan hasil perkalian
+            document.getElementById('hasil').innerHTML = hitung;
+        }
+
+        // function bagi
+        function bagi() {
+            // pembagian
+            var hitung = parseFloat(angka1.value) / parseInt(angka2.value);
+
+            // menampilkan hasil pembagian
+            document.getElementById('hasil').innerHTML = hitung;
+        }
+    </script>
+</body>
+
+</html>
